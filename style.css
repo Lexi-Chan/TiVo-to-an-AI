@@ -1,0 +1,256 @@
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#tivo-container {
+    background-color: #000;
+    border: 2px solid #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+#screen {
+    background-color: #000;
+    width: 720px;
+    height: 480px;
+    border: 1px solid #333;
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+#main-menu {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+#main-menu h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ff00;
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    font-weight: normal;
+}
+
+#main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-menu li {
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    position: relative;
+    transition: all 0.2s ease;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+#main-menu li.selected {
+    background-color: rgba(0, 128, 0, 0.3);
+    color: #fff;
+    padding-left: 40px;
+}
+
+#main-menu li.selected::before {
+    content: '►';
+    position: absolute;
+    left: 15px;
+    color: #00ff00;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#watch-tv-screen h2,
+#record-list-screen h2,
+#program-guide-screen h2,
+#find-programs-screen h2,
+#messages-setttings-screen h2 {
+    color: #00ff00;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: normal;
+}
+
+#live-tv-player {
+    background-color: #111;
+    color: #aaa;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    min-height: 300px;
+}
+
+#live-tv-player video {
+    width: 100%;
+    height: 280px;
+    background: #000;
+    margin-top: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    background-color: rgba(0, 128, 0, 0.2);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+.controls button:hover {
+    background-color: rgba(0, 128, 0, 0.4);
+}
+
+#remote {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 300px;
+}
+
+#remote button {
+    padding: 15px;
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+#remote button[data-nav] {
+    font-weight: bold;
+    background-color: #444;
+}
+
+#remote button[data-action="tivo"] {
+    background-color: #008000;
+    grid-column: span 3;
+    border-radius: 25px;
+}
+
+#remote button[data-control] {
+    background-color: #2a2a2a;
+}
+
+.progress-bar {
+    height: 5px;
+    background-color: #333;
+    position: relative;
+    margin: 10px 0;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #00ff00;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.info-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #00ff00;
+}
+
+#recordings li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+    font-size: 18px;
+}
+
+.status-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #00ff00;
+    font-size: 14px;
+}
+
+.channel-info {
+    font-size: 24px;
+    color: #00ff00;
+    text-align: left;
+    padding: 20px;
+}
+
+.channel-guide {
+    color: #00ff00;
+    text-align: left;
+    padding: 20px;
+}
+
+.channel-guide h3 {
+    margin-bottom: 15px;
+}
+
+.kids-channel {
+    border: 2px solid #ff69b4;
+    border-radius: 8px;
+}
+
+.teleblue-mode {
+    background: linear-gradient(45deg, #000046, #1CB5E0);
+    animation: teleblue-pulse 2s infinite;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.channel-info iframe {
+    max-width: 100%;
+    margin-top: 15px;
+    border: 2px solid #1CB5E0;
+    border-radius: 8px;
+}
+
+@keyframes teleblue-pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.weather-alert {
+    background: #ff0000;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.5; }
+}

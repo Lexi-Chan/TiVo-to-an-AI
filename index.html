@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TiVo Series 2 Simulator</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tivo-container">
+        <div id="screen">
+            <div id="main-menu">
+                <h1>TiVo Central</h1>
+                <ul>
+                    <li data-action="watch-tv" class="selected">Watch Live TV</li>
+                    <li data-action="record-list">My Recordings</li>
+                    <li data-action="program-guide">Program Guide</li>
+                    <li data-action="find-programs">Find Programs</li>
+                    <li data-action="messages-setttings">Messages & Settings</li>
+                </ul>
+            </div>
+            <div id="watch-tv-screen" class="hidden">
+                <h2>Watch Live TV</h2>
+                <div id="live-tv-player">
+                    <p>Simulating Live TV Stream...</p>
+                    </div>
+                <div class="controls">
+                    <button data-control="play">Play</button>
+                    <button data-control="pause">Pause</button>
+                    <button data-control="rewind">Rewind</button>
+                    <button data-control="fast-forward">Fast Forward</button>
+                    <button data-control="back-to-menu">Back to Menu</button>
+                </div>
+            </div>
+            <div id="record-list-screen" class="hidden">
+                <h2>My Recordings</h2>
+                <ul id="recordings">
+                    <li>No recordings yet.</li>
+                </ul>
+                <button data-control="back-to-menu">Back to Menu</button>
+            </div>
+            <div id="program-guide-screen" class="hidden">
+                <h2>Program Guide</h2>
+                <p>Simulated Program Guide Data...</p>
+                <button data-control="back-to-menu">Back to Menu</button>
+            </div>
+            <div id="find-programs-screen" class="hidden">
+                <h2>Find Programs</h2>
+                <p>Simulated Find Programs Options...</p>
+                <button data-control="back-to-menu">Back to Menu</button>
+            </div>
+            <div id="messages-setttings-screen" class="hidden">
+                <h2>Messages & Settings</h2>
+                <ul>
+                    <li>Messages</li>
+                    <li>Settings</li>
+                </ul>
+                <button data-control="back-to-menu">Back to Menu</button>
+            </div>
+        </div>
+        <div id="remote">
+            <button data-nav="up">Up</button>
+            <button data-nav="down">Down</button>
+            <button data-nav="left">Left</button>
+            <button data-nav="right">Right</button>
+            <button data-action="select">Select</button>
+            <button data-action="tivo">TiVo</button>
+            <button data-control="play">Play</button>
+            <button data-control="pause">Pause</button>
+            <button data-control="rewind">Rewind</button>
+            <button data-control="fast-forward">Fast Forward</button>
+            <button data-control="record">Record</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
